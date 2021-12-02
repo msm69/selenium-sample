@@ -32,6 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 
-/search-result/
+/book-result*/
+/search-result*/
 /testrun/
 /output/
