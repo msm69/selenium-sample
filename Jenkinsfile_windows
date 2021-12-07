@@ -9,14 +9,14 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                bat "docker build -t='vinsdocker/selenium-docker' ."
+                bat "docker build -t='dsugawara/selenium-docker' ."
             }
         }
         stage('Push Image') {
             steps {
 			    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
 			        bat "docker login --username=${user} --password=${pass}"
-			        bat "docker push vinsdocker/selenium-docker:latest"
+			        bat "docker push dsugawara/selenium-docker:latest"
 			    }                           
             }
         }
